@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putstr_print.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:02:03 by rrask             #+#    #+#             */
-/*   Updated: 2022/12/29 13:44:53 by rrask            ###   ########.fr       */
+/*   Updated: 2022/12/30 13:43:16 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_putstr_print(char *s, int fd, int i)
 {
 	if (!s)
-		return ;
+		return (i);
 	while (*s)
 	{
 		write(fd, s, 1);
+		i++;
 		s++;
 	}
+	return (i);
 }

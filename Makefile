@@ -1,9 +1,9 @@
-NAME: libftprintf.a
+NAME = libftprintf.a
 
 INC = libftprintf.h
 
 SRC = \
-ft_printf.c
+ft_printf.c		ft_putchar_fd.c		ft_putstr_print.c
 
 all:  $(NAME)
 
