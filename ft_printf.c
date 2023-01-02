@@ -6,31 +6,20 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 13:30:09 by rrask             #+#    #+#             */
-/*   Updated: 2022/12/30 16:14:40 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/02 11:50:35 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-static int	handle_c(int i, char c)
-{
-	write(1, &c, 1);
-	i++;
-	return (i);
-}
-
-static int	handle_s(int i, char *s)
-{
-	ft_putstr_print(s, 1, i);
-	return (i);
-}
-  
 static int	format_handler(va_list args, int i, const char *s)
 {
 	if (*s == 'c')
 		handle_c(i, va_arg(args, int));
 	if (*s == 's')
 		handle_s(i, va_arg(args, char *));
+	if (*s == '%')
+		handle_c(i, '%');
 	return (i);
 }
 
@@ -49,7 +38,7 @@ int	ft_printf(const char *s, ...)
 			format_handler(args, i, &s[i]);
 			i++;
 		}
-		if (s[i])
+		else if (s[i])
 		{
 			ft_putchar_fd(s[i], 1);
 			i++;

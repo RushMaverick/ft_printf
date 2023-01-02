@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/29 13:36:12 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/02 11:15:34 by rrask            ###   ########.fr       */
+/*   Created: 2023/01/02 10:38:01 by rrask             #+#    #+#             */
+/*   Updated: 2023/01/02 12:53:38 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
-#include <stdarg.h>
-#include <unistd.h>
+#include "header.h"
 
-int		ft_printf(const char *s, ...);
-int		ft_putstr_print(char *s, int fd, int i);
-void	ft_putchar_fd(char c, int fd);
-int		handle_s(int i, char *s);
-int		handle_c(int i, char c);
-int		handle_prcnt(int i, char c);
+int	handle_c(int i, char c)
+{
+	write(1, &c, 1);
+	i++;
+	return (i);
+}
 
-#endif
+// int	handle_prcnt(int i, char c)
+// {
+// 	write(1, &c, 1);
+// 	i++;
+// 	return (i);
+// }
+
+int	handle_s(int i, char *s)
+{
+	ft_putstr_print(s, 1, i);
+	return (i);
+}

@@ -3,7 +3,7 @@ NAME = libftprintf.a
 INC = libftprintf.h
 
 SRC = \
-ft_printf.c		ft_putchar_fd.c		ft_putstr_print.c
+ft_printf.c		ft_putchar_fd.c		ft_putstr_print.c		ft_printf_utils.c
 
 all:  $(NAME)
 
