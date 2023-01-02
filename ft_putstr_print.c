@@ -6,19 +6,19 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:02:03 by rrask             #+#    #+#             */
-/*   Updated: 2022/12/30 13:43:16 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/02 13:17:20 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int	ft_putstr_print(char *s, int fd, int i)
+int	ft_putstr_print(int i, char *s)
 {
 	if (!s)
 		return (i);
 	while (*s)
 	{
-		write(fd, s, 1);
+		write(1, s, 1);
 		i++;
 		s++;
 	}

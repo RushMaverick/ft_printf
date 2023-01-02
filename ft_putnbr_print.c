@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_putnbr_print.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/29 13:36:12 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/02 15:21:44 by rrask            ###   ########.fr       */
+/*   Created: 2022/11/28 10:30:11 by rrask             #+#    #+#             */
+/*   Updated: 2023/01/02 15:21:26 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
-#include <stdarg.h>
-#include <unistd.h>
+#include "header.h"
 
-
-int		ft_printf(const char *s, ...);
-int		ft_putstr_print(int i, char *s);
-int		ft_putchar_print(int i, char c);
-void	ft_putnbr_print(int c, int i);
-int		handle_s(int i, char *s);
-int		handle_c(int i, char c);
-int		handle_num(int i, int c);
-
-#endif
+void	ft_putnbr_print(int c, int i)
+{
+	if (c == -2147483648)
+	{
+		ft_putchar_print(i, '-');
+		ft_putnbr_print(2, i);
+		ft_putnbr_print(147483648, i);
+	}
+	else if (c < 0)
+	{
+		ft_putchar_print(i, '-');
+		ft_putnbr_print(-c, i);
+	}
+	else if (c > 9)
+	{
+		ft_putnbr_print(c / 10, i);
+		ft_putnbr_print(c % 10, i);
+	}
+	else
+	{
+		ft_putchar_print(i, c + '0');
+	}
+}
