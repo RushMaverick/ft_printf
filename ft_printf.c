@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 13:30:09 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/02 15:46:50 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/03 11:38:20 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,17 @@
 static int	format_handler(va_list args, int i, const char *s)
 {
 	if (*s == 'c')
-		handle_c(i, va_arg(args, int));
+		handle_c(va_arg(args, int));
 	if (*s == 's')
-		handle_s(i, va_arg(args, char *));
+		handle_s(va_arg(args, char *));
 	if (*s == '%')
-		handle_c(i, '%');
+		handle_c('%');
 	if (*s == 'd' || *s == 'i')
-		handle_num(va_arg(args, int), i);
+		handle_num(va_arg(args, int));
+	if (*s == 'x')
+		handle_hex(va_arg(args, int));
+	if (*s == 'X')
+		handle_HEX(va_arg(args, int));
 	return (i);
 }
 
@@ -42,7 +46,7 @@ int	ft_printf(const char *s, ...)
 		}
 		else if (s[i])
 		{
-			ft_putchar_print(1, s[i]);
+			ft_putchar_print(s[i]);
 			i++;
 		}
 	}

@@ -6,15 +6,13 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 09:59:43 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/02 15:20:53 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/03 11:34:21 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int	ft_putchar_print(int i, char c)
+void	ft_putchar_print(char c)
 {
 	write(1, &c, 1);
-	i++;
-	return (i);
 }

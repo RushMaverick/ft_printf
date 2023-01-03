@@ -6,32 +6,32 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 10:30:11 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/02 15:21:26 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/03 11:36:42 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	ft_putnbr_print(int c, int i)
+void	ft_putnbr_print(int c)
 {
 	if (c == -2147483648)
 	{
-		ft_putchar_print(i, '-');
-		ft_putnbr_print(2, i);
-		ft_putnbr_print(147483648, i);
+		ft_putchar_print('-');
+		ft_putnbr_print(2);
+		ft_putnbr_print(147483648);
 	}
 	else if (c < 0)
 	{
-		ft_putchar_print(i, '-');
-		ft_putnbr_print(-c, i);
+		ft_putchar_print('-');
+		ft_putnbr_print(-c);
 	}
 	else if (c > 9)
 	{
-		ft_putnbr_print(c / 10, i);
-		ft_putnbr_print(c % 10, i);
+		ft_putnbr_print(c / 10);
+		ft_putnbr_print(c % 10);
 	}
 	else
 	{
-		ft_putchar_print(i, c + '0');
+		ft_putchar_print(c + '0');
 	}
 }
