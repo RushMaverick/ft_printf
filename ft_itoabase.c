@@ -6,13 +6,13 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 13:39:20 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/04 14:51:12 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/04 17:27:24 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int	rev_buf(char buf[])
+int	rev_buf(char buf[]) //reverse prints the string to the output
 {
 	int	i;
 
