@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 13:36:12 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/02 15:21:44 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/04 14:39:16 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,15 @@
 
 
 int		ft_printf(const char *s, ...);
-int		ft_putstr_print(int i, char *s);
-int		ft_putchar_print(int i, char c);
-void	ft_putnbr_print(int c, int i);
-int		handle_s(int i, char *s);
-int		handle_c(int i, char c);
-int		handle_num(int i, int c);
+int		ft_putstr_print(char *s);
+int		ft_putchar_print(char c);
+int		ft_putnbr_print(int c);
+int		handle_s(char *s);
+int		handle_c(char c);
+int		handle_num(int c);
+int		handle_hex(unsigned int i, const char *s);
+int		ft_itoabase(unsigned int i, const char *s);
+int		ft_strlen(const char *str);
+
 
 #endif

@@ -6,64 +6,49 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 13:39:20 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/03 13:59:11 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/04 14:51:12 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-static int	inputlen(int n)
+int	rev_buf(char buf[])
 {
-	int		len;
-	long	newn;
+	int	i;
 
-	len = 0;
-	newn = (long)n;
-	if (n == 0)
-		return (1);
-	if (newn < 0)
-		len++;
-	while (newn != 0)
+	i = ft_strlen(buf);
+	while (i > 0)
 	{
-		newn /= 10;
-		len++;
+		write(1, &buf[i - 1], 1);
+		i--;
 	}
-	return (len);
+	return (ft_strlen(buf));
 }
 
-static long	newnzero(long newn, int mod, int len, char *nbr)
+int	ft_itoabase(unsigned int var, const char *s)
 {
-	while (newn != 0)
-	{
-		mod = newn % 16;
-		newn = newn / 16;
-		nbr[len - 1] = mod + '0';
-		len--;
-	}
-	return (newn);
-}
+	int		j;
+	int		count;
+	long	char_to_add;
+	char	buf[16];
 
-char	*ft_itoa(int n)
-{
-	int		len;
-	int		mod;
-	long	newn;
-	char	*nbr;
-
-	len = inputlen(n);
-	mod = 0;
-	newn = (long)n;
-	nbr = malloc(sizeof(char) * len + 1);
-	if (!nbr)
-		return (NULL);
-	if (newn == 0)
-		nbr[0] = '0';
-	nbr[len] = '\0';
-	if (newn < 0)
+	j = 0;
+	char_to_add = 0;
+	if (var == 0)
+		return (ft_putchar_print('0'));
+	while (var != 0)
 	{
-		newn = newn * -1;
-		nbr[0] = '-';
+		char_to_add = var % 16;
+		if (char_to_add < 10)
+			buf[j] = char_to_add + '0';
+		else if (char_to_add >= 10 && *s == 'X')
+			buf[j] = char_to_add + 55;
+		else
+			buf[j] = char_to_add + 87;
+		var = var / 16;
+		j++;
 	}
-	newnzero(newn, mod, len, nbr);
-	return (nbr);
+	buf[j] = '\0';
+	count = rev_buf(buf);
+	return (count);
 }

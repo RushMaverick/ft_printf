@@ -6,34 +6,43 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 10:38:01 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/03 13:59:37 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/04 14:46:55 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int	handle_c(int i, char c)
+int	handle_c(char c)
 {
+	int	pr_len;
+
+	pr_len = 0;
 	write(1, &c, 1);
-	i++;
-	return (i);
+	pr_len++;
+	return (pr_len);
 }
 
-int	handle_num(int c, int i)
+int	handle_num(int c)
 {
-	ft_putnbr_print(c, i);
-	i++;
-	return (i);
+	int	pr_len;
+
+	pr_len = 0;
+	ft_putnbr_print(c);
+	return (pr_len);
 }
 
-int	handle_s(int i, char *s)
+int	handle_s(char *s)
 {
-	ft_putstr_print(i, s);
-	return (i);
+	int	pr_len;
+
+	pr_len = ft_putstr_print(s);
+	return (pr_len);
 }
 
-int	handle_hex(int i, char *s)
+int	handle_hex(unsigned int var, const char *s)
 {
-	ft_putstr_print(i, s);
-	return (i);
+	int	pr_len;
+
+	pr_len = ft_itoabase(var, s);
+	return (pr_len);
 }
