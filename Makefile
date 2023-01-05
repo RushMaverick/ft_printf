@@ -4,7 +4,7 @@ INC = libftprintf.h
 
 SRC = \
 ft_printf.c			ft_putchar_print.c		ft_putstr_print.c		ft_printf_utils.c \
-ft_putnbr_print.c	libft/ft_strlen.c 		ft_itoabase.c			
+ft_putnbr_print.c	ft_itoabase.c			
 
 all:  $(NAME)
 
