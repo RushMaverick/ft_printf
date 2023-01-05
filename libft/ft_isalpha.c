@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/29 13:36:12 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/05 12:27:10 by rrask            ###   ########.fr       */
+/*   Created: 2022/10/25 17:22:32 by rrask             #+#    #+#             */
+/*   Updated: 2022/12/14 15:58:37 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
-# include <stdarg.h>
-# include <unistd.h>
-# include "libft/libft.h"
+#include "libft.h"
 
-int	ft_printf(const char *s, ...);
-int	ft_putstr_print(char *s);
-int	ft_putchar_print(char c);
-int	ft_putnbr_print(int c);
-int	handle_s(char *s);
-int	handle_c(char c);
-int	handle_num(int c);
-int	handle_hex(unsigned int i, const char *s);
-int	ft_itoabase(unsigned int i, const char *s); 
-
-#endif
+int	ft_isalpha(int c)
+{
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
+	return (0);
+}

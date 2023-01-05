@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/29 13:36:12 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/05 12:27:10 by rrask            ###   ########.fr       */
+/*   Created: 2022/11/04 15:08:06 by rrask             #+#    #+#             */
+/*   Updated: 2022/12/02 11:41:25 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
-# include <stdarg.h>
-# include <unistd.h>
-# include "libft/libft.h"
+#include "libft.h"
 
-int	ft_printf(const char *s, ...);
-int	ft_putstr_print(char *s);
-int	ft_putchar_print(char c);
-int	ft_putnbr_print(int c);
-int	handle_s(char *s);
-int	handle_c(char c);
-int	handle_num(int c);
-int	handle_hex(unsigned int i, const char *s);
-int	ft_itoabase(unsigned int i, const char *s); 
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
 
-#endif
+	i = 0;
+	if (n == 0)
+		return (0);
+	while ((unsigned char)s1[i] == (unsigned char)s2[i] && n - 1 > i)
+	{
+		if ((unsigned char)s1[i] == '\0' && (unsigned char)s2[i] == '\0')
+			return (0);
+		i++;
+	}
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+}

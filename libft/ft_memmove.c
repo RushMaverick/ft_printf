@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/29 13:36:12 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/05 12:27:10 by rrask            ###   ########.fr       */
+/*   Created: 2022/11/01 15:52:59 by rrask             #+#    #+#             */
+/*   Updated: 2022/12/14 15:59:40 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
-# include <stdarg.h>
-# include <unistd.h>
-# include "libft/libft.h"
+#include "libft.h"
 
-int	ft_printf(const char *s, ...);
-int	ft_putstr_print(char *s);
-int	ft_putchar_print(char c);
-int	ft_putnbr_print(int c);
-int	handle_s(char *s);
-int	handle_c(char c);
-int	handle_num(int c);
-int	handle_hex(unsigned int i, const char *s);
-int	ft_itoabase(unsigned int i, const char *s); 
+void	*ft_memmove(void *dst, const void *src, size_t n)
+{
+	char	*a;
+	char	*b;
 
-#endif
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	a = (char *)dst;
+	b = (char *)src;
+	if (a > b)
+	{
+		while (n--)
+			a[n] = b[n];
+	}
+	else
+	{
+		while (n--)
+			*(a++) = *(b++);
+	}
+	return (dst);
+}

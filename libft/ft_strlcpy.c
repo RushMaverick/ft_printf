@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/29 13:36:12 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/05 12:27:10 by rrask            ###   ########.fr       */
+/*   Created: 2022/11/02 11:49:41 by rrask             #+#    #+#             */
+/*   Updated: 2022/12/05 14:31:49 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
-# include <stdarg.h>
-# include <unistd.h>
-# include "libft/libft.h"
+#include "libft.h"
 
-int	ft_printf(const char *s, ...);
-int	ft_putstr_print(char *s);
-int	ft_putchar_print(char c);
-int	ft_putnbr_print(int c);
-int	handle_s(char *s);
-int	handle_c(char c);
-int	handle_num(int c);
-int	handle_hex(unsigned int i, const char *s);
-int	ft_itoabase(unsigned int i, const char *s); 
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t	i;
+	size_t	srclen;
 
-#endif
+	i = 0;
+	srclen = 0;
+	while (src[srclen] != '\0')
+	{
+		if (dstsize > 1)
+		{
+			dst[i] = src[i];
+			i++;
+			dstsize--;
+		}
+		srclen++;
+	}
+	if (dstsize)
+		dst[i] = '\0';
+	return (srclen);
+}

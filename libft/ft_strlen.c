@@ -6,15 +6,15 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:57:01 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/04 14:39:28 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/05 10:41:45 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
 int	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')
