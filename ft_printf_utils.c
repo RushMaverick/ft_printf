@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 10:38:01 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/05 15:08:41 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/06 14:15:03 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,13 @@ int	handle_unsign(int c)
 	int	pr_len;
 
 	pr_len = ft_putusnbr(c);
+	return (pr_len);
+}
+
+int	handle_void(void *v)
+{
+	int	pr_len;
+
+	pr_len = ft_putvoid(v);
 	return (pr_len);
 }
