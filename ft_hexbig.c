@@ -6,11 +6,11 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 15:17:23 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/09 15:46:37 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/09 16:58:45 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "ft_printf.h"
 
 static int	rev_buf(char buf[])
 {

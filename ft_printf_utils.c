@@ -6,11 +6,11 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 10:38:01 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/09 15:51:28 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/09 16:59:26 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "ft_printf.h"
 
 int	handle_c(char c)
 {
@@ -42,6 +42,7 @@ int	handle_s(char *s)
 int	handle_hexsmol(unsigned int var)
 {
 	int	pr_len;
+
 	pr_len = ft_hexsmol((unsigned long long)var);
 	return (pr_len);
 }
@@ -49,6 +50,7 @@ int	handle_hexsmol(unsigned int var)
 int	handle_hexbig(unsigned int var)
 {
 	int	pr_len;
+
 	pr_len = ft_hexbig((unsigned long long)var);
 	return (pr_len);
 }

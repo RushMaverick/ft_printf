@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 13:36:12 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/09 15:45:48 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/09 17:42:23 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+# include "./libft/libft.h"
 # include <stdarg.h>
 # include <unistd.h>
-# include "libft/libft.h"
 
-int		ft_printf(const char *s, ...);
-int		ft_putstr_print(char *s);
-int		ft_putchar_print(char c);
-int		ft_putnbr_print(int c);
-int		handle_s(char *s);
-int		handle_c(char c);
-int		handle_num(int c);
-int		handle_void(void *v);
-int		handle_hexsmol(unsigned int i);
-int		handle_hexbig(unsigned int i);
-int		handle_unsign(int c);
-int		ft_hexsmol(unsigned long long i); 
-int		ft_hexbig(unsigned long long i); 
-int		ft_putusnbr(unsigned int c);
-int		ft_putvoid(void *v);
-
+int	ft_printf(const char *s, ...);
+int	ft_putstr_print(char *s);
+int	ft_putchar_print(char c);
+int	ft_putnbr_print(int c);
+int	handle_s(char *s);
+int	handle_c(char c);
+int	handle_num(int c);
+int	handle_void(void *v);
+int	handle_hexsmol(unsigned int i);
+int	handle_hexbig(unsigned int i);
+int	handle_unsign(int c);
+int	ft_hexsmol(unsigned long long i);
+int	ft_hexbig(unsigned long long i);
+int	ft_putusnbr(unsigned int c);
+int	ft_putvoid(void *v);
 
 #endif

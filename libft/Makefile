@@ -18,7 +18,6 @@ all:  $(NAME)
 
 $(NAME): 
 	cc -Wall -Wextra -Werror -c $(SRC) -I $(INC)
-	ar rc $(NAME) $(SRC:.c=.o)
 
 clean:
 	rm -f $(SRC:.c=.o)

@@ -6,11 +6,11 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:02:03 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/04 13:36:35 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/09 16:59:54 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "ft_printf.h"
 
 int	ft_putstr_print(char *s)
 {

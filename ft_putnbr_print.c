@@ -6,15 +6,15 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 10:30:11 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/04 14:31:53 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/09 17:02:03 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "ft_printf.h"
 
-int		ft_putnbr_print(int c)
+int	ft_putnbr_print(int c)
 {
-	int pr_len;
+	int	pr_len;
 
 	pr_len = 0;
 	if (c == -2147483648)
