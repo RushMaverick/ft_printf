@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 13:30:09 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/06 14:12:47 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/09 15:24:27 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ static int	format_handler(va_list args, const char *s)
 		pr_len += handle_c('%');
 	if (*s == 'd' || *s == 'i')
 		pr_len += handle_num(va_arg(args, int));
-	if (*s == 'x' || *s == 'X')
-		pr_len += handle_hex(va_arg(args, unsigned int), s);
+	if (*s == 'x')
+		pr_len += handle_hexsmol(va_arg(args, unsigned int));
+	if (*s == 'X')
+		pr_len += handle_hexbig(va_arg(args, unsigned int));
 	if (*s == 'u')
 		pr_len += handle_unsign(va_arg(args, int));
 	if (*s == 'p')

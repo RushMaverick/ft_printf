@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 10:38:01 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/06 14:15:03 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/09 15:51:28 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,17 @@ int	handle_s(char *s)
 	return (pr_len);
 }
 
-int	handle_hex(unsigned int var, const char *s)
+int	handle_hexsmol(unsigned int var)
 {
 	int	pr_len;
+	pr_len = ft_hexsmol((unsigned long long)var);
+	return (pr_len);
+}
 
-	pr_len = ft_itoabase(var, s);
+int	handle_hexbig(unsigned int var)
+{
+	int	pr_len;
+	pr_len = ft_hexbig((unsigned long long)var);
 	return (pr_len);
 }
 
@@ -55,10 +61,10 @@ int	handle_unsign(int c)
 	return (pr_len);
 }
 
-int	handle_void(void *v)
+int	handle_void(void *s)
 {
 	int	pr_len;
 
-	pr_len = ft_putvoid(v);
+	pr_len = ft_putvoid(s);
 	return (pr_len);
 }

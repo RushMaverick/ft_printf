@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoabase.c                                      :+:      :+:    :+:   */
+/*   ft_hexbig.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/03 13:39:20 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/05 10:35:41 by rrask            ###   ########.fr       */
+/*   Created: 2023/01/09 15:17:23 by rrask             #+#    #+#             */
+/*   Updated: 2023/01/09 15:46:37 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int	rev_buf(char buf[]) //reverse prints the string to the output
+static int	rev_buf(char buf[])
 {
 	int	i;
 
@@ -25,12 +25,12 @@ int	rev_buf(char buf[]) //reverse prints the string to the output
 	return (ft_strlen(buf));
 }
 
-int	ft_itoabase(unsigned int var, const char *s)
+int	ft_hexbig(unsigned long long var)
 {
-	int		j;
-	int		count;
-	long	char_to_add;
-	char	buf[16];
+	int j;
+	int count;
+	long char_to_add;
+	char buf[16];
 
 	j = 0;
 	char_to_add = 0;
@@ -41,10 +41,8 @@ int	ft_itoabase(unsigned int var, const char *s)
 		char_to_add = var % 16;
 		if (char_to_add < 10)
 			buf[j] = char_to_add + '0';
-		else if (char_to_add >= 10 && *s == 'X')
-			buf[j] = char_to_add + 55;
 		else
-			buf[j] = char_to_add + 87;
+			buf[j] = char_to_add + 55;
 		var = var / 16;
 		j++;
 	}

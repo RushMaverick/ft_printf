@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 13:36:12 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/06 14:14:19 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/09 15:45:48 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,14 @@ int		ft_putnbr_print(int c);
 int		handle_s(char *s);
 int		handle_c(char c);
 int		handle_num(int c);
-int		handle_void(void *);
-int		handle_hex(unsigned int i, const char *s);
+int		handle_void(void *v);
+int		handle_hexsmol(unsigned int i);
+int		handle_hexbig(unsigned int i);
 int		handle_unsign(int c);
-int		ft_itoabase(unsigned int i, const char *s); 
+int		ft_hexsmol(unsigned long long i); 
+int		ft_hexbig(unsigned long long i); 
 int		ft_putusnbr(unsigned int c);
-int		ft_putvoid(void *s);
+int		ft_putvoid(void *v);
+
 
 #endif
