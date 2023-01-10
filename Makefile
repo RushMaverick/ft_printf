@@ -29,7 +29,7 @@ $(NAME):
 
 clean:
 	make -C libft clean
-	rm -f $(SRC:.c=.o)
+	rm -f $(SRC:.c=.o) $(LIBFTSRC:.c=.o)  
 
 fclean: clean
 	make -C libft fclean
