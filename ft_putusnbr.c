@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:09:44 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/09 16:59:56 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/10 16:13:42 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,11 @@
 
 int	ft_putusnbr(unsigned int c)
 {
-	if (c < 0)
-		ft_putusnbr(c);
-	else if (c > 9)
-	{
-		ft_putusnbr(c / 10);
-		ft_putusnbr(c % 10);
-	}
-	else
-	{
-		ft_putchar_print(c + '0');
-	}
-	return (c);
+	int	pr_len;
+
+	pr_len = 0;
+	if (c > 9)
+		pr_len += ft_putusnbr(c / 10);
+	pr_len += ft_putchar_print(c % 10 + '0');
+	return (pr_len);
 }

@@ -18,21 +18,22 @@ ft_strnstr.c	ft_atoi.c		ft_substr.c		ft_strjoin.c	\
 ft_strtrim.c	ft_putnbr_fd.c	ft_itoa.c		ft_strmapi.c	\
 ft_striteri.c	ft_split.c	
 
-LIBFTSRC := $(patsubst %, $(INC)%, $(LIBFT_FILES))
+# LIBFTSRC := $(patsubst %, $(INC)%, $(LIBFT_FILES))
 
 all:  $(NAME)
 
 $(NAME): 
-	make -C libft 
-	cc -Wall -Wextra -Werror -c $(SRC) $(LIBFTSRC) -I $(INC)
-	ar rc $(NAME) $(SRC:.c=.o) $(LIBFTSRC:.c=.o)
+	cd libft && make
+	cd libft && mv libft.a ..
+	mv libft.a $(NAME)
+	cc -Wall -Wextra -Werror -c $(SRC) -I $(INC)
+	ar rc $(NAME) $(SRC:.c=.o) $(NAME)
 
 clean:
 	make -C libft clean
-	rm -f $(SRC:.c=.o) $(LIBFTSRC:.c=.o)  
+	rm -f $(SRC:.c=.o) 
 
 fclean: clean
 	make -C libft fclean
 	rm -f $(NAME)
-
 re: fclean all

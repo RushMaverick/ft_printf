@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 10:38:01 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/09 16:59:26 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/10 16:14:31 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	handle_hexbig(unsigned int var)
 	return (pr_len);
 }
 
-int	handle_unsign(int c)
+int	handle_unsign(unsigned int c)
 {
 	int	pr_len;
 
