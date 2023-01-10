@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 10:38:01 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/10 16:14:31 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/10 16:43:55 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	handle_num(int c)
 	int	pr_len;
 
 	pr_len = 0;
-	ft_putnbr_print(c);
+	pr_len += ft_putnbr_print(c);
 	return (pr_len);
 }
 
