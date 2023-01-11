@@ -1,17 +1,43 @@
-# ft_printf
-printf remade by me for the 42 program. 
 
-First we create a va_list named args so we can start the variadic argument handling. 
-After starting it we create a while loop for the string given so we can go through it with the integer i. 
-In this loop we check if the given index is the character '%' or if there is anything left in s.
+# About ft_printf
 
-If we find a '%' we first have to increment to the next index to check it's contents. Then we go into a function called
-format_handler to take care of the given specificer (For example a %c tells us to only print the next character in arg1 while a %s tells us to go ahead and print the string given in arg2.).
+This project was made for the 42 Program in Hive Helsinki by me. 
+This code defines a custom implementation of the printf function in C, named ft_printf. It accepts a string as the first argument and any additional arguments are passed using the va_list variable argument feature in C.
 
-In format_handler we are passed the parameters va_list args and const char *s. 
-Args is going to hold all the parameters given to our ft_printf function which we can then go ahead and call in
-each of the specifier checks. 
+The concepts I had to explore were variadic functions, base conversion
+and combining multiple libraries into one working program. It was by no
+means an easy task and thanks to it I learned a lot about structuring your
+code. 
 
-Once all of '%' is handled, we return the integer i which has been incremented to the parent function ft_printf. We continue down in the loop to handle more characters that come our way. Each loop checks one character until we run out of s.
-We then close with va_end(args) to end the list which makes our code more mobile for environments that require you to
-close open ends and finally return the finalized integer pr_len. 
+
+## Installation
+
+To use ft_printf in your code, include the "ft_printf.h" header file and call the ft_printf function in the same way you would call the standard printf function.
+
+```bash
+  #include "ft_printf.h"
+```
+In case you are using a Makefile of your own you have to link the two together.
+## Usage
+
+This implementation is intended to provide similar functionality as the standard printf function in C, with additional handling for certain formatting options such as hexadecimal and void pointer, you can test them by using the following format specifiers : 'c', 's' ,'%' ,'d' ,'i' ,'x' ,'X' , 'u', 'p'.
+
+Note: This code is only a skeleton of the final implementation, it may not have all the functionality nor error handling of the original printf function, so it is recommended to check the completeness before using it in production environments.
+
+
+## Usage/Examples
+
+Code examples: 
+```javascript
+ft_printf("Hello, %s!\n", "world");
+ft_printf("The hex value of %d is %x.\n", 255, 255);
+ft_printf("The void pointer is %p.\n",&p);
+
+```
+These will output the following: 
+```javascript
+Hello, world!
+The hex value of 255 is ff.
+The void pointer is 0x7ffee11b99a0.
+
+```
