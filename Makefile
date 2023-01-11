@@ -3,9 +3,9 @@ NAME = libftprintf.a
 INC = libft/
 
 SRC = \
-ft_printf.c			ft_putchar_print.c		ft_putstr_print.c		ft_printf_utils.c \
-ft_putnbr_print.c	ft_hexbig.c				ft_hexsmol.c			ft_putusnbr.c	\
-ft_putvoid.c    
+ft_printf.c			ft_putchar_print.c		ft_putstr_print.c		ft_printf_utils1.c \
+ft_printf_utils2.c	ft_putnbr_print.c		ft_hexbig.c				ft_hexsmol.c	\
+ft_putusnbr.c		ft_putvoid.c    
 
 LIBFT_FILES = \
 ft_bzero.c		ft_isalnum.c	ft_isalpha.c	ft_isascii.c \
@@ -17,8 +17,6 @@ ft_strchr.c		ft_strrchr.c	ft_strdup.c		ft_strlcat.c	\
 ft_strnstr.c	ft_atoi.c		ft_substr.c		ft_strjoin.c	\
 ft_strtrim.c	ft_putnbr_fd.c	ft_itoa.c		ft_strmapi.c	\
 ft_striteri.c	ft_split.c	
-
-# LIBFTSRC := $(patsubst %, $(INC)%, $(LIBFT_FILES))
 
 all:  $(NAME)
 

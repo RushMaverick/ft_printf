@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_printf_utils1.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 10:38:01 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/10 16:43:55 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/11 12:13:43 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,29 +44,5 @@ int	handle_hexsmol(unsigned int var)
 	int	pr_len;
 
 	pr_len = ft_hexsmol((unsigned long long)var);
-	return (pr_len);
-}
-
-int	handle_hexbig(unsigned int var)
-{
-	int	pr_len;
-
-	pr_len = ft_hexbig((unsigned long long)var);
-	return (pr_len);
-}
-
-int	handle_unsign(unsigned int c)
-{
-	int	pr_len;
-
-	pr_len = ft_putusnbr(c);
-	return (pr_len);
-}
-
-int	handle_void(void *s)
-{
-	int	pr_len;
-
-	pr_len = ft_putvoid(s);
 	return (pr_len);
 }

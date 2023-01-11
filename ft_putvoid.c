@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 16:56:02 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/09 17:00:00 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/11 12:11:53 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 int	ft_putvoid(void *s)
 {
-	write(1, "0x", 2);
-	ft_hexsmol((unsigned long long)s);
-	return (0);
+	int	pr_len;
+
+	pr_len = 0;
+	pr_len += write(1, "0x", 2);
+	pr_len += ft_hexsmol((unsigned long long)s);
+	return (pr_len);
 }

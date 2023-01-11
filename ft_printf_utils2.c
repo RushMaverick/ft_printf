@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_print.c                                  :+:      :+:    :+:   */
+/*   ft_printf_utils2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 15:02:03 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/11 09:48:36 by rrask            ###   ########.fr       */
+/*   Created: 2023/01/11 12:13:52 by rrask             #+#    #+#             */
+/*   Updated: 2023/01/11 12:29:39 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr_print(char *s)
+int	handle_hexbig(unsigned int var)
 {
-	int	i;
+	int	pr_len;
 
-	i = 0;
-	if (!s)
-		return (write(1, "(null)", 6));
-	while (*s)
-	{
-		write(1, s, 1);
-		i++;
-		s++;
-	}
-	return (i);
+	pr_len = ft_hexbig((unsigned long long)var);
+	return (pr_len);
+}
+
+int	handle_unsign(unsigned int c)
+{
+	int	pr_len;
+
+	pr_len = ft_putusnbr(c);
+	return (pr_len);
+}
+
+int	handle_void(void *s)
+{
+	int	pr_len;
+
+	pr_len = ft_putvoid(s);
+	return (pr_len);
 }

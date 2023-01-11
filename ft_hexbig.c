@@ -6,7 +6,7 @@
 /*   By: rrask <rrask@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 15:17:23 by rrask             #+#    #+#             */
-/*   Updated: 2023/01/09 16:58:45 by rrask            ###   ########.fr       */
+/*   Updated: 2023/01/11 12:11:21 by rrask            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ static int	rev_buf(char buf[])
 
 int	ft_hexbig(unsigned long long var)
 {
-	int j;
-	int count;
-	long char_to_add;
-	char buf[16];
+	int		j;
+	int		count;
+	long	char_to_add;
+	char	buf[16];
 
 	j = 0;
 	char_to_add = 0;
